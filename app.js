@@ -10,21 +10,50 @@ app.locals._ = _;
 var getData = require('./getData.js');
 
 var Report;
+
 getData(function(err,results){
   Report = results;
 });
 
 
-//subdomain code - kv2
-// var vhost = require('vhost');
-// 
-// express()
-// .use(vhost('m.localhost.com', require('/category/m').app))
-// .use(vhost('sync.localhost.com', require('/category/sync').app))
+//PEOPLE PAGE TEMP CODE - INTEGRATE ONCE google sheets are merged
 
+var getDataPeople = require('./getDataPeople.js');
+var ReportPeople;
+
+getDataPeople(function(err,results){
+  ReportPeople = results;
+});
+
+function checkDataPeople(){
+  if (_.isEmpty(ReportPeople)) {
+    getDataPeople(function(err,results){
+      ReportPeople = results;
+    });
+  } else {
+    // The time when we got the data
+    created = new Date(ReportPeople['created']);
+    // How many seconds ago we got the data
+    seconds = Math.floor((new Date() - created) / 1000);
+    console.log('Data is ' + seconds + ' seconds old...')
+    if (seconds > 20) {
+      // More than 5 minutes ago
+      console.log('\nData out of date, getting new data...');
+      getDataPeople(function(err,results){
+        ReportPeople = results;
+        console.log('We\'ve got data!');
+      });
+    }
+  }
+}
+
+//PEOPLE PAGE TEMP CODE END
 
 
 function checkData(){
+
+checkDataPeople(); //#remove later
+	
   if (_.isEmpty(Report)) {
     getData(function(err,results){
       Report = results;
@@ -161,7 +190,8 @@ app.get('/story/:id', function (req, res) {
   });
 });
 
-//Garret's subdomain request
+
+//Garret's "subdomain" request. points all /id to categories, assuming they are categories. Bad!
 app.get('/:id', function (req, res) {
   res.render('category', {
     requested: req.params.id,
@@ -175,7 +205,12 @@ app.get('/:id', function (req, res) {
   });
 });
 
-
+//for actual subdomain support use vhost 
+// var vhost = require('vhost');
+// 
+// express()
+// .use(vhost('m.example.com', require('/path/m').app))
+// .use(vhost('sync.example.com', require('/path/to/sync').app))
 
     
 app.get('/update', function (req, res) {
