@@ -112,6 +112,26 @@ app.get('/', function(req, res){
   });
 });
 
+
+//PEOPLE PAGE TEMP CODE kv2
+app.get('/:id', function (req, res) {
+  if (req.params.id == 'people') {
+
+    res.render('people', {
+      title: 'OAC Leadership',
+      type: 'people',
+      url: req.originalUrl,
+      requested: req.params.id,
+      data: Report,
+      partials: {
+        header: 'partials/header',
+        footer: 'partials/footer'
+      }
+    });
+	}
+});
+//PEOPLE PAGE TEMP CODE END kv2
+    
 app.get('/category/:id', function (req, res) {
   if (req.params.id == '2015-activity') {
     res.render('timeline', {
