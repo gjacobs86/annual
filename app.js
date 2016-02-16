@@ -14,6 +14,16 @@ getData(function(err,results){
   Report = results;
 });
 
+
+//subdomain code - kv2
+// var vhost = require('vhost');
+// 
+// express()
+// .use(vhost('m.localhost.com', require('/category/m').app))
+// .use(vhost('sync.localhost.com', require('/category/sync').app))
+
+
+
 function checkData(){
   if (_.isEmpty(Report)) {
     getData(function(err,results){
@@ -125,7 +135,7 @@ app.get('/category/:id', function (req, res) {
       }
     });
   } else {
-    res.render('category', {
+    res.render('category', {	
       requested: req.params.id,
       type: 'category',
       url: req.originalUrl,
@@ -151,6 +161,23 @@ app.get('/story/:id', function (req, res) {
   });
 });
 
+//Garret's subdomain request
+app.get('/:id', function (req, res) {
+  res.render('category', {
+    requested: req.params.id,
+    type: 'category',
+    url: req.originalUrl,
+    data: Report,
+    partials: {
+      header: 'partials/header',
+      footer: 'partials/footer'
+    }
+  });
+});
+
+
+
+    
 app.get('/update', function (req, res) {
   checkData();
   res.send('Updating data...');
