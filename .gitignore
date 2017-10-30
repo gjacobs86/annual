@@ -6,3 +6,4 @@ _site/
 data/*
 heroku-wp/
 node_modules/
+package-lock.json

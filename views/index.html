@@ -218,7 +218,6 @@
     /*** INTRODUCTION *******************************************************/
     .introduction {
       padding-top: 2rem;
-      padding-bottom: 5rem;
     }
 
     .introduction p {
@@ -227,6 +226,19 @@
 
     .introduction a {
       margin-top: 1rem;
+    }
+
+    .section-column-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .section-column {
+      flex: 1;
+    }
+
+    .work-example-list {
+      list-style: none;
     }
 
 
@@ -309,12 +321,47 @@
     </div>
   </section>
 
+  <!-- SECTION: INTRODUCTION -->
+  <section class="subscribe block block--light-orange">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+          <h2>Subscribe to our mailing list</h2>
+          <% include partials/mailchimp.html %>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION: MISSION -->
   <section class="block block--lightblue mission">
     <div class="container">
       <div class="row">
         <div class="col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
-          <img src="/assets/images/new/words.png" alt="">
+          <h3>There are fast disasters and slow disasters. We work on the slow ones.</h3>
+          <div class="section-column-container">
+            <div class="section-column">
+              <h4 class="word-example-title">Disasters like:</h4>
+              <ul class="work-example-list">
+                <li class="work-example-item">the housing affordability crisis</li>
+                <li class="work-example-item">homelessness</li>
+                <li class="work-example-item">unjust public transit systems</li>
+                <li class="work-example-item">lack of access to public spaces</li>
+                <li class="work-example-item">displacement and gentrification</li>
+              </ul>
+            </div>
+            <div class="section-column">
+              <h4 class="word-example-title">Together we can</h4>
+              <ul class="work-example-list">
+                <li class="work-example-item">support small businesses</li>
+                <li class="work-example-item">promote urban agriculture</li>
+                <li class="work-example-item">design a better education system</li>
+                <li class="work-example-item">raise up youth</li>
+                <li class="work-example-item">demand equitable property ownership</li>
+                <li class="work-example-item">stand with immigrant communities</li>
+              </ul>
+            </div>
+          </div>
           <p><a href="https://www.paypal.com/us/fundraiser/charity/1509959" class="btn btn-lg btn-primary btn-bluey">DONATE TODAY TO SUPPORT US</a></p>
         </div>
       </div>

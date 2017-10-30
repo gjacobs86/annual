@@ -1,0 +1,31 @@
+<!-- this template is the pages for all the chapters -->
+
+<% include partials/header.html %>
+
+
+<% if (requested['color']) { %>
+  <style>
+    ul.story__body__content__links li a:before,
+    .story:before,
+    a.story__body__content__link--header,
+    .story__body__content__opener__share ul li a:before,
+    .story__body__content__opener__share p a:before,
+    .action {
+      background-color: <%- requested['color'] %>;
+    }
+    .header-share-icons p a:before {
+      color: <%- requested['color'] %>;
+    }
+  </style>
+<% } %>
+
+<div id="js-main">
+  <% include partials/nav.html %>
+
+  <section class="stories" id="{{ page.unique-id }}">
+    <div class="container">
+    </div>
+  </section>
+
+<% include partials/next.html %>
+<% include partials/footer.html %>
