@@ -231,6 +231,7 @@ h1 {
 }
 
 h2 {
+  margin: 0.5em 0;
   font-size: $base-size * 1.5;
 
   @include media($tablet) {
@@ -344,6 +345,8 @@ strong,
 @import 'component-closer';
 
 @import 'component-mailchimp';
+
+@import 'component-button';
 
 // =====
 // CUSTOM: Changes for Garrett's AFH Network
@@ -707,4 +710,9 @@ img {
       width: 100%;
     }
   }
+}
+
+.container.medium-width {
+  margin: 0 auto;
+  width: 786px;
 }

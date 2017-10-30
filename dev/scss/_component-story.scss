@@ -15,21 +15,18 @@ $border-color: rgba(0,0,0,0.1);
 
 .story {
   position: relative;
-  margin-top: $padding * 2;
-  margin-bottom: $padding * 2;
+  margin-top: $padding;
+  margin-bottom: $padding;
   @include span-columns(10 of 12);
   @include shift(1 of 12);
   // border: 1px solid rgba(0,0,0,0.1);
-  padding-bottom: $padding * 2;
-  padding-left: $padding * 2;
-  padding-right: $padding * 2;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  padding-left: $padding;
+  padding-right: $padding;
   background-color: white;
-  box-shadow: 0px 0px 6px 4px rgba(0,0,0,0.06);
+  box-shadow: 0px 0px 0.5em rgba(0,0,0,0.1);
   overflow: hidden;
-
-  @include media($medium-desktop) {
-    padding: 0;
-  }
 
   @include media($mobile) {
     @include span-columns(11 of 12);
