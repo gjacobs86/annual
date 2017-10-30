@@ -5,28 +5,11 @@
     </a>
   </div><!---->
   <nav class="nav">
-    <ul class="u-unstyled u-row">
-
-      <li class="currently">Currently Reading:</li>
-      <% if (data.opener) { %>
-        <% opener = data.opener[0] %>
-        <li class="
-        <% if (title == "Introduction") { %>
-        active
-        <% } %>
-        "><a href="/"><%- opener['category'] %></a></li>
-      <% } %>
-
-      <% var pages = _.union(data['pages'],data['chapters']) %>
-      <% _.each(pages, function(category){ %>
-        <li class="u-row
-        <% if (category['unique-id'] == requested['unique-id']) { %>
-        active
-        <% } %>
-        "><a href="/<%- category['unique-id'] %>"><%- category['category'] %></a></li>
-      <% }); %>
-
-
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="/about-us">About</a></li>
+      <li class="nav-item"><a href="/services">Services</a></li>
+      <li class="nav-item"><a href="https://medium.com/@openarchcollab">Blog</a></li>
+      <li class="nav-item"><a href="https://www.razoo.com/organization/Open-Architecture-Collaborative">Donate</a></li>
     </ul>
   </nav>
 </header>
