@@ -129,6 +129,19 @@ app.get('/resources', function(req, res) {
     }
   });
 });
+app.get('/services', function(req, res) {
+  res.render('services', {
+    title: 'services',
+    type: 'services',
+    url: req.originalUrl,
+    requested: 'services',
+    data: Report,
+    partials: {
+      header: 'partials/header',
+      footer: 'partials/footer'
+    }
+  });
+});
 app.get('/updates', function(req, res, next) {
   res.render('updates', {
     title: 'Updates',

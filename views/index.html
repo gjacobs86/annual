@@ -182,6 +182,7 @@
 
     /*** HERO ***************************************************************/
     .hero {
+      margin-top: 60px;
       padding: 2rem 0;
       background-image: url('/assets/images/new/hands.jpg');
       background-size: cover;
@@ -201,18 +202,22 @@
       font-family: "Flama-Medium";
       font-size: 3.5rem;
       text-transform: uppercase;
-      color: #80709F;
+      color: #E06940;
     }
 
     @media (min-width: 768px) {
-      .hero-tagline { padding-top: 20vh }
-      .hero-tagline h1 { font-size: 4.5rem }
+      .hero-tagline {
+        padding-top: 15vh;
+        text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
+      }
+      .hero-tagline h1 {
+        font-size: 4.5rem
+      }
     }
 
     /*** INTRODUCTION *******************************************************/
     .introduction {
       padding-top: 2rem;
-      padding-bottom: 5rem;
     }
 
     .introduction p {
@@ -223,17 +228,35 @@
       margin-top: 1rem;
     }
 
+    .section-column-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .section-column {
+      flex: 1;
+    }
+
+    .work-example-list {
+      list-style: none;
+    }
+
 
 
 
     .btn-primary {
-      background-color: #80709F;
-      border-color: #80709F;
+      background-color: #E06940;
+      border-color: #E06940;
     }
     .btn-primary:hover {
-      background-color: #80709F;
-      border-color: #80709F;
-      opacity: 0.8;
+      background-color: #e37853;
+      border-color: #e37853;
+      opacity: 0.9;
+    }
+    .btn-primary:active,
+    .btn-primary:active:hover {
+      background-color: #c95e39;
+      border-color: #c95e39;
     }
     .btn-primary.btn-bluey {
       background-color: #7E92A1;
@@ -266,10 +289,12 @@
 </head>
 <body>
 
+  <% include partials/nav.html %>
+
   <!-- SECTION: HEADER -->
   <section class="hero">
     <div class="container">
-      <div class="col-sm-10 col-md-offset-2 col-md-8">
+      <div class="col-sm-10 col-md-offset-1 col-md-10">
 
         <!-- LOGO -->
         <div class="hero-logo">
@@ -289,8 +314,20 @@
   <section class="introduction">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-6 col-lg-5">
+        <div class="col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
           <p>The Open Architecture Collaborative (OAC) is a global learning network mobilizing architects and designers with technical skills to build capacity with communities experiencing systemic marginalization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: INTRODUCTION -->
+  <section class="subscribe block block--light-orange">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+          <h2>Subscribe to our mailing list</h2>
+          <% include partials/mailchimp.html %>
         </div>
       </div>
     </div>
@@ -300,8 +337,31 @@
   <section class="block block--lightblue mission">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-6 col-lg-7">
-          <img src="/assets/images/new/words.png" alt="">
+        <div class="col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
+          <h3>There are fast disasters and slow disasters. We work on the slow ones.</h3>
+          <div class="section-column-container">
+            <div class="section-column">
+              <h4 class="word-example-title">Disasters like:</h4>
+              <ul class="work-example-list">
+                <li class="work-example-item">the housing affordability crisis</li>
+                <li class="work-example-item">homelessness</li>
+                <li class="work-example-item">unjust public transit systems</li>
+                <li class="work-example-item">lack of access to public spaces</li>
+                <li class="work-example-item">displacement and gentrification</li>
+              </ul>
+            </div>
+            <div class="section-column">
+              <h4 class="word-example-title">Together we can</h4>
+              <ul class="work-example-list">
+                <li class="work-example-item">support small businesses</li>
+                <li class="work-example-item">promote urban agriculture</li>
+                <li class="work-example-item">design a better education system</li>
+                <li class="work-example-item">raise up youth</li>
+                <li class="work-example-item">demand equitable property ownership</li>
+                <li class="work-example-item">stand with immigrant communities</li>
+              </ul>
+            </div>
+          </div>
           <p><a href="https://www.paypal.com/us/fundraiser/charity/1509959" class="btn btn-lg btn-primary btn-bluey">DONATE TODAY TO SUPPORT US</a></p>
         </div>
       </div>
@@ -312,7 +372,7 @@
   <section class="block block--blue">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-6 col-lg-5">
+        <div class="col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
           <article class="celebrate">
             <p>Check out the latest stories from around our network</p>
             <p><a href="https://medium.com/@openarchcollab">Read Project Writups</a></p>
@@ -327,7 +387,7 @@
   <section class="block block--purple">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-6 col-lg-5">
+        <div class="col-sm-10 col-md-offset-1 col-md-10 col-lg-10">
           <article class="celebrate">
             <p>We share stories from around the network, opportunities in the community design ecosystem, and lessons learned from projects and program.</p>
             <p><a href="#signup">Get the stories first: join our mailing list</a></p>
@@ -341,7 +401,7 @@
   <section class="module">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-8">
+        <div class="col-sm-10 col-md-offset-1 col-md-10">
           <h3 class="module-header">This is how we do it.</h3>
 
           <!-- STORY: CHAPTERS/VOLUNTEERS -->
@@ -379,7 +439,7 @@
   <section class="module">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-8">
+        <div class="col-sm-10 col-md-offset-1 col-md-10">
           <h3 class="module-header">Stories from the field.</h3>
 
           <!-- STORY: BOGOTA
@@ -398,7 +458,7 @@
   <section class="module">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-8">
+        <div class="col-sm-10 col-md-offset-1 col-md-10">
           <h3 class="module-header">On our first year.</h3>
 
           <article class="story story--full story--red">
@@ -416,7 +476,7 @@
   <section class="module">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-8">
+        <div class="col-sm-10 col-md-offset-1 col-md-10">
           <h3 class="module-header">The kickoff.</h3>
 
           <article class="story story--full story--purple">
@@ -434,7 +494,7 @@
   <section class="module">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-8">
+        <div class="col-sm-10 col-md-offset-1 col-md-10">
           <h3 class="module-header">Find a chapter.</h3>
 
           <article class="story story--full story--purple">
@@ -449,7 +509,7 @@
   <div class="block block--lightblue">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-offset-2 col-md-8">
+        <div class="col-sm-10 col-md-offset-1 col-md-10">
 
           <article class="footer">
             <div class="footer-section">
@@ -743,6 +803,7 @@
   </section>
 
 
+  <link rel="stylesheet" href="css/application.css">
 
   <script defer src="/scripts/vendor/jquery-1.11.2.min.js"></script>
   <script defer src="/scripts/vendor/jquery.transit.min.js"></script>

@@ -1,7 +1,9 @@
+public/css/
+*.map
 .*/
 .DS_Store
 _site/
-node_modules
 data/*
 heroku-wp/
-*.map
+node_modules/
+package-lock.json

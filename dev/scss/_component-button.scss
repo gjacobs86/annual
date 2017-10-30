@@ -1,0 +1,26 @@
+.btn {
+  display: inline-block;
+  margin: 1em 1em 0 0;
+  border: 1px solid #eeeeee;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  background-color: #efefef;
+  font-weight: 300;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  border: 1px solid #E06940;
+  background-color: #E06940;
+  color: #ffffff;
+  font-size: 1.5em;
+}
+
+.btn-primary:hover {
+  background-color: lighten(#E06940, 5%);
+}
+
+.btn-primary:active {
+  background-color: darken(#E06940, 5%);
+}

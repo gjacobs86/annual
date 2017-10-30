@@ -12,7 +12,7 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: #504e51;
+  background-color: rgba(80, 80, 80, 0.8);
   z-index: 999;
   margin-top: 0;
   height: 60px;
@@ -24,7 +24,6 @@ header * {
 }
 
 div.logo {
-  
   padding: 10px 15px 0 15px;
   float: left;
 
@@ -67,6 +66,10 @@ nav {
   float: right;
 }
 
+nav ul {
+  display: inline;
+}
+
 nav ul li {
   margin-right: 5px;
   display: none;
@@ -92,13 +95,22 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  opacity: 0.8; 
+  opacity: 0.8;
 }
 
 nav ul li.active a {
   font-style: italic;
   border-bottom: 1px solid white;
   margin-right: 35px;
+}
+
+nav .nav-menu .nav-item {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+nav .nav-menu .nav-item a:hover {
+  color: #E06940;
 }
 
 // Expand button
